@@ -1,0 +1,57 @@
+"scripts" // está en package.json //
+distintas funciones a ejecutar del proyecto
+
+-start
+-build
+-ejecut
+
+
+* Qué es un componente y cómo usarlos?
+
+los componentes son los que hacen las tareas que debemos hacer 
+
+siempre empiezan en mayuscula
+
+function TodoItem (){
+    return (
+        <li>
+       <span> v </span>
+       <p> Llorar con la llorona </p>  
+       <span> v </span>
+       </li>
+    );
+}
+
+***para usarlo dentro de un componente, después de haber hecho esto hay que ponerlo de la siguiente manera
+      <TodoItem />
+      dentro del componente deseado 
+
+-para crear un componente podemos usar funciones 
+podemos usar el ejemplo de la línea 15
+
+***para renderizarlo es***
+
+const container = document.getElementById('app');
+
+const root = ReactDom.createRoot(container);
+
+root.render(<TodoItem/>);
+
+
+*** para hacer dínamicos se reciben props para sustuir valores (se podría decir)
+function TodoItem (props){
+    return (
+        <h1>
+       completaste
+       {props.completed} de 
+       {props.total} TODOS
+       </h1>
+    );
+}
+
+y se envían 
+
+<TodoCount 
+completed={3}
+total={5}
+/>
